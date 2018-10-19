@@ -5,30 +5,45 @@ public class Demo {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		System.out.println("Unesite prvi broj: ");
-		Scanner br1 = new Scanner(System.in);
-		int broj1 = br1.nextInt();
+		int negativni = 0;
+		int pozitivni = 0;
+		int parni = 0;
+		int neparni = 0;
+		int nula = 0;
 		
-		System.out.println("Unesite drugi broj: ");
-		Scanner br2 = new Scanner(System.in);
-		int broj2 = br2.nextInt(); 
+		System.out.println("Unesite broj brojeva za unos!");
+		Scanner unos = new Scanner (System.in);
+		int kapacitet = unos.nextInt();
 		
-		
-		if (broj2 < broj1) {
-			System.out.println("Ukoliko je prvi broj veci od drugog, brojevi ce biti zamenjeni.");
-			int broj = broj2;
-			broj2 = broj1;
-			broj1 = broj;
+		int [] niz = new int [kapacitet];
+		System.out.println("Unesite brojeve: ");
+		for (int i = 0; i< kapacitet; i++) {
+			niz[i]= unos.nextInt();
 		}
 		
-		int zbir = 0;
-		
-		for (int i = broj1; i <= broj2; i++) {
-			zbir = zbir + i;
+		for (int i = 0; i<kapacitet; i++) {
+			if (niz[i]<0)
+				negativni++;
+			if (niz[i] == 0)
+				nula++;
+			if (niz[i]>0)
+				pozitivni++;
+			if (niz[i]%2 == 0)
+				parni++;
+			if (niz[i]%2 != 0)
+				neparni++;
 		}
+		System.out.println("Parni: " + parni);
+		System.out.println("neparni: " + neparni);
+		System.out.println("nula: " + nula);
+		System.out.println("pozitivni: " + pozitivni);
+		System.out.println("negativni: " + negativni);
 		
-		System.out.println("Zbir brojeva je " + zbir + ".");
+		
+			
 		
 	}
+	
+	
+	}
 
-}
